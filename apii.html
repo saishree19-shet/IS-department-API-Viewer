@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CS Department API Viewer</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f7fa;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      color: #005a9c;
+    }
+    .api-buttons {
+      margin-bottom: 20px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+      background-color: #0078d4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005a9c;
+    }
+    .output {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📘 CS Department API Viewer</h1>
+
+  <div class="api-buttons">
+    <button onclick="getCSInfo()">/cs-info</button>
+    <button onclick="getHOD()">/hod</button>
+    <button onclick="getFacilities()">/facilities</button>
+    <button onclick="getEC()">/ec</button>
+    <button onclick="getFullAPI()">/getapi</button>
+  </div>
+
+  <div class="output" id="apiOutput">
+    Click a button to view department data.
+  </div>
+
+  <script>
+    const csData = {
+      csInfo: {
+        name: "Computer Science Department",
+        programs: ["B.Tech", "M.Tech", "Ph.D"],
+        focusAreas: ["AI", "ML", "Cybersecurity", "Software Engineering"]
+      },
+      hod: {
+        name: "Dr. A. Nair",
+        specialization: "Artificial Intelligence",
+        email: "hod.cs@university.edu"
+      },
+      facilities: [
+        "AI/ML Research Lab",
+        "Cloud Computing Lab",
+        "Seminar Hall with AV setup",
+        "Department Library",
+        "Hackathon & Coding Club spaces"
+      ],
+      extraCurricular: [
+        "Coding Competitions",
+        "Tech Fests & Hackathons",
+        "Robotics Club",
+        "Open Source Drives",
+        "Guest Lectures & Workshops"
+      ]
+    };
+
+    function render(data) {
+      document.getElementById("apiOutput").textContent = JSON.stringify(data, null, 2);
+    }
+
+    function getCSInfo() {
+      render(csData.csInfo);
+    }
+
+    function getHOD() {
+      render(csData.hod);
+    }
+
+    function getFacilities() {
+      render(csData.facilities);
+    }
+
+    function getEC() {
+      render(csData.extraCurricular);
+    }
+
+    function getFullAPI() {
+      render(csData);
+    }
+  </script>
+
+</body>
+</html>
