@@ -1,4 +1,4 @@
-# 📘 CS Department API Viewer
+# 📘 IS Department API Viewer
 
 A simple frontend interface that simulates interacting with a REST API. This project demonstrates how to handle JSON data, map specific endpoints to functions, and display structured responses dynamically on a webpage.
 
